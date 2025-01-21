@@ -2,12 +2,23 @@ version: '3'
 
 tasks:
   podman_build:
-    desc: Build the Docker image
+    desc: Build the Docker image with Podman
     cmds:
       - podman build --tag highs-san -f ./Dockerfile
 
   podman_run:
-    desc: Run the Docker image
+    desc: Run the Docker image with Podman
     cmds:
       - mkdir -p ${HOME}/highs-output
       - podman run --rm -it -v ${HOME}/highs-output:/root/highs-output localhost/highs-san:latest bash
+
+  docker_build:
+    desc: Build the Docker image
+    cmds:
+      - docker build --tag highs-san .
+
+  docker_run:
+    desc: Run the Docker image
+    cmds:
+      - mkdir -p ${HOME}/highs-output
+      - docker run --rm -it -v ${HOME}/highs-output:/root/highs-output highs-san:latest bash
