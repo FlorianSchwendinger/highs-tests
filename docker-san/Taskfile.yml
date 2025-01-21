@@ -9,4 +9,5 @@ tasks:
   podman_run:
     desc: Run the Docker image
     cmds:
-      - podman run --rm -it localhost/highs-san:latest bash
+      - mkdir -p ${HOME}/highs-output
+      - podman run --rm -it -v ${HOME}/highs-output:/root/highs-output localhost/highs-san:latest bash

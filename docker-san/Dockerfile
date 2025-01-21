@@ -44,7 +44,7 @@ RUN echo "deb http://http.debian.net/debian sid main" > /etc/apt/sources.list.d/
         && echo 'APT::Default-Release "testing";' > /etc/apt/apt.conf.d/default \
         && echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/90local-no-recommends
 
-ENV R_BASE_VERSION=4.4.2
+ENV WORKDIR=$HOME
 
 ## More verbose UBSAN/SAN output (cf #3) -- this is still somewhat speculative
 ## Entry copied from Prof Ripley's setup described at http://www.stats.ox.ac.uk/pub/bdr/memtests/README.txt
@@ -64,5 +64,7 @@ RUN cd $HOME \
     && cmake .. -DCMAKE_INSTALL_PREFIX="$HOME/highslib" -DCMAKE_VERBOSE_MAKEFILE:bool=ON -G "Unix Makefiles" \
     && make install
 
+RUN cd /usr/local/bin \
+	&& ln -s $HOME/highslib/bin/highs highs
 
 CMD ["highs"]
