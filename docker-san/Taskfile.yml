@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  podman_build:
+    desc: Build the Docker image
+    cmds:
+      - podman build --tag highs-san -f ./Dockerfile
+
+  podman_run:
+    desc: Run the Docker image
+    cmds:
+      - podman run --rm -it localhost/highs-san:latest bash
