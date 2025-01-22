@@ -1,0 +1,346 @@
+Running HiGHS 1.9.0 (git hash: cbc99e554): Copyright (c) 2025 HiGHS under MIT licence terms
+Set option log_file to "HiGHS.log"
+MIP  matchit_1 has 8 rows; 615 cols; 3814 nonzeros; 614 integer variables
+Coefficient ranges:
+  Matrix [7e-03, 9e+00]
+  Cost   [1e+00, 1e+00]
+  Bound  [1e+00, 2e+02]
+  RHS    [0e+00, 0e+00]
+Presolving model
+8 rows, 615 cols, 3814 nonzeros  0s
+8 rows, 520 cols, 3223 nonzeros  0s
+/root/HiGHS/src/util/HighsHashTree.h:855:32: runtime error: index 1 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b06bc8c in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:855
+    #1 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #2 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #3 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #4 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #5 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #6 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #7 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #8 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #9 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #10 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #11 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #12 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #13 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:877:36: runtime error: index 2 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b0680ff in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:877
+    #1 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #2 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #3 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #4 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #5 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #6 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #7 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #8 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #9 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #10 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #11 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #12 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #13 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:879:32: runtime error: index 2 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b068951 in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:879
+    #1 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #2 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #3 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #4 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #5 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #6 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #7 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #8 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #9 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #10 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #11 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #12 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #13 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:907:38: runtime error: index 7 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b06b7a5 in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:907
+    #1 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #2 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #3 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #4 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #5 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #6 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #7 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #8 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #9 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #10 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #11 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #12 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #13 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:424:59: runtime error: index 7 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b06e7b2 in HighsHashTree<int, HighsImplications::VarBound>::addChildToBranchNode(HighsHashTree<int, HighsImplications::VarBound>::BranchNode*, unsigned char, int) /root/HiGHS/src/util/HighsHashTree.h:424
+    #1 0x7f4c1b06e7b2 in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:930
+    #2 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #3 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #4 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #5 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #6 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #7 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #8 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #9 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #10 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #11 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #12 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #13 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #14 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:424:29: runtime error: index 8 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b06e6f2 in HighsHashTree<int, HighsImplications::VarBound>::addChildToBranchNode(HighsHashTree<int, HighsImplications::VarBound>::BranchNode*, unsigned char, int) /root/HiGHS/src/util/HighsHashTree.h:424
+    #1 0x7f4c1b06e6f2 in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:930
+    #2 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #3 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #4 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #5 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #6 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #7 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #8 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #9 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #10 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #11 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #12 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #13 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #14 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:933:24: runtime error: index 7 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b06c429 in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:933
+    #1 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #2 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #3 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #4 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #5 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #6 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #7 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #8 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #9 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #10 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #11 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #12 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #13 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:938:36: runtime error: index 7 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b06e208 in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:938
+    #1 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #2 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #3 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #4 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #5 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #6 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #7 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #8 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #9 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #10 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #11 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #12 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #13 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #14 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #15 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:437:59: runtime error: index 7 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b06c564 in HighsHashTree<int, HighsImplications::VarBound>::addChildToBranchNode(HighsHashTree<int, HighsImplications::VarBound>::BranchNode*, unsigned char, int) /root/HiGHS/src/util/HighsHashTree.h:437
+    #1 0x7f4c1b06c564 in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:930
+    #2 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #3 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #4 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #5 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #6 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #7 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #8 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #9 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #10 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #11 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #12 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #13 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #14 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:437:29: runtime error: index 8 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b06c4d5 in HighsHashTree<int, HighsImplications::VarBound>::addChildToBranchNode(HighsHashTree<int, HighsImplications::VarBound>::BranchNode*, unsigned char, int) /root/HiGHS/src/util/HighsHashTree.h:437
+    #1 0x7f4c1b06c4d5 in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:930
+    #2 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #3 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #4 0x7f4c19caaa29 in HighsCliqueTable::extractCliques(HighsMipSolver const&, std::vector<int, std::allocator<int> >&, std::vector<double, std::allocator<double> >&, std::vector<signed char, std::allocator<signed char> >&, double, int, std::vector<int, std::allocator<int> >&, std::vector<HighsCliqueTable::CliqueVar, std::allocator<HighsCliqueTable::CliqueVar> >&, double) /root/HiGHS/src/mip/HighsCliqueTable.cpp:888
+    #5 0x7f4c19cc26d2 in HighsCliqueTable::extractCliques(HighsMipSolver&, bool) /root/HiGHS/src/mip/HighsCliqueTable.cpp:1376
+    #6 0x7f4c1a7464b9 in presolve::HPresolve::runProbing(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:1413
+    #7 0x7f4c1a7ce334 in presolve::HPresolve::presolve(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4218
+    #8 0x7f4c1a7d45c2 in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4422
+    #9 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #10 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #11 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #12 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #13 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #14 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #15 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #16 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+8 rows, 520 cols, 3223 nonzeros  0s
+/root/HiGHS/src/util/HighsHashTree.h:1295:73: runtime error: index 1 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1a0a1dc3 in for_each_recurse<void, HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)>&> /root/HiGHS/src/util/HighsHashTree.h:1295
+    #1 0x7f4c1a0b4ad8 in for_each<HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)> > /root/HiGHS/src/util/HighsHashTree.h:1420
+    #2 0x7f4c1a0b4ad8 in HighsImplications::rebuild(int, std::vector<int, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&) /root/HiGHS/src/mip/HighsImplications.cpp:462
+    #3 0x7f4c1a70341b in presolve::HPresolve::shrinkProblem(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:915
+    #4 0x7f4c1a7d45fe in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4437
+    #5 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #6 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #7 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #8 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #9 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #10 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:1295:73: runtime error: index 1 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1a0ac653 in for_each_recurse<void, HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)>&> /root/HiGHS/src/util/HighsHashTree.h:1295
+    #1 0x7f4c1a0b4b5b in for_each<HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)> > /root/HiGHS/src/util/HighsHashTree.h:1420
+    #2 0x7f4c1a0b4b5b in HighsImplications::rebuild(int, std::vector<int, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&) /root/HiGHS/src/mip/HighsImplications.cpp:474
+    #3 0x7f4c1a70341b in presolve::HPresolve::shrinkProblem(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:915
+    #4 0x7f4c1a7d45fe in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4437
+    #5 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #6 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #7 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #8 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #9 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #10 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #11 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #12 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:858:32: runtime error: index 2 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b06b89d in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:858
+    #1 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #2 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #3 0x7f4c1a0a920b in operator() /root/HiGHS/src/mip/HighsImplications.cpp:483
+    #4 0x7f4c1a0a920b in forward<HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)>&> /root/HiGHS/src/util/HighsHash.h:842
+    #5 0x7f4c1a0a920b in for_each_recurse<void, HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)>&> /root/HiGHS/src/util/HighsHashTree.h:1275
+    #6 0x7f4c1a0a7ef7 in for_each_recurse<void, HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)>&> /root/HiGHS/src/util/HighsHashTree.h:1295
+    #7 0x7f4c1a0b4b5b in for_each<HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)> > /root/HiGHS/src/util/HighsHashTree.h:1420
+    #8 0x7f4c1a0b4b5b in HighsImplications::rebuild(int, std::vector<int, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&) /root/HiGHS/src/mip/HighsImplications.cpp:474
+    #9 0x7f4c1a70341b in presolve::HPresolve::shrinkProblem(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:915
+    #10 0x7f4c1a7d45fe in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4437
+    #11 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #12 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #13 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #14 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #15 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #16 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #17 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #18 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:884:32: runtime error: index 2 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1b069dc5 in HighsHashTree<int, HighsImplications::VarBound>::insert_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr*, unsigned long, int, HighsHashTableEntry<int, HighsImplications::VarBound>&) [clone .constprop.0] /root/HiGHS/src/util/HighsHashTree.h:884
+    #1 0x7f4c1a079083 in std::pair<HighsImplications::VarBound*, bool> HighsHashTree<int, HighsImplications::VarBound>::insert_or_get<int&, HighsImplications::VarBound&>(int&, HighsImplications::VarBound&) /root/HiGHS/src/util/HighsHashTree.h:1378
+    #2 0x7f4c1a079083 in HighsImplications::addVLB(int, int, double, double) /root/HiGHS/src/mip/HighsImplications.cpp:414
+    #3 0x7f4c1a0a920b in operator() /root/HiGHS/src/mip/HighsImplications.cpp:483
+    #4 0x7f4c1a0a920b in forward<HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)>&> /root/HiGHS/src/util/HighsHash.h:842
+    #5 0x7f4c1a0a920b in for_each_recurse<void, HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)>&> /root/HiGHS/src/util/HighsHashTree.h:1275
+    #6 0x7f4c1a0a7ef7 in for_each_recurse<void, HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)>&> /root/HiGHS/src/util/HighsHashTree.h:1295
+    #7 0x7f4c1a0b4b5b in for_each<HighsImplications::rebuild(HighsInt, const std::vector<int>&, const std::vector<int>&)::<lambda(HighsInt, HighsImplications::VarBound)> > /root/HiGHS/src/util/HighsHashTree.h:1420
+    #8 0x7f4c1a0b4b5b in HighsImplications::rebuild(int, std::vector<int, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&) /root/HiGHS/src/mip/HighsImplications.cpp:474
+    #9 0x7f4c1a70341b in presolve::HPresolve::shrinkProblem(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:915
+    #10 0x7f4c1a7d45fe in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4437
+    #11 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #12 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #13 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #14 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #15 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #16 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #17 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #18 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+/root/HiGHS/src/util/HighsHashTree.h:1194:69: runtime error: index 1 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1a08a6ba in HighsHashTree<int, HighsImplications::VarBound>::destroy_recurse(HighsHashTree<int, HighsImplications::VarBound>::NodePtr) /root/HiGHS/src/util/HighsHashTree.h:1194
+    #1 0x7f4c1a08a6ba in HighsHashTree<int, HighsImplications::VarBound>::~HighsHashTree() /root/HiGHS/src/util/HighsHashTree.h:1444
+    #2 0x7f4c1a08a6ba in void std::_Destroy<HighsHashTree<int, HighsImplications::VarBound> >(HighsHashTree<int, HighsImplications::VarBound>*) /usr/include/c++/14/bits/stl_construct.h:151
+    #3 0x7f4c1a08a6ba in void std::_Destroy_aux<false>::__destroy<HighsHashTree<int, HighsImplications::VarBound>*>(HighsHashTree<int, HighsImplications::VarBound>*, HighsHashTree<int, HighsImplications::VarBound>*) /usr/include/c++/14/bits/stl_construct.h:163
+    #4 0x7f4c1a08a6ba in void std::_Destroy<HighsHashTree<int, HighsImplications::VarBound>*>(HighsHashTree<int, HighsImplications::VarBound>*, HighsHashTree<int, HighsImplications::VarBound>*) /usr/include/c++/14/bits/stl_construct.h:196
+    #5 0x7f4c1a08a6ba in void std::_Destroy<HighsHashTree<int, HighsImplications::VarBound>*, HighsHashTree<int, HighsImplications::VarBound> >(HighsHashTree<int, HighsImplications::VarBound>*, HighsHashTree<int, HighsImplications::VarBound>*, std::allocator<HighsHashTree<int, HighsImplications::VarBound> >&) /usr/include/c++/14/bits/alloc_traits.h:981
+    #6 0x7f4c1a08a6ba in std::vector<HighsHashTree<int, HighsImplications::VarBound>, std::allocator<HighsHashTree<int, HighsImplications::VarBound> > >::~vector() /usr/include/c++/14/bits/stl_vector.h:735
+    #7 0x7f4c1a0b4d79 in HighsImplications::rebuild(int, std::vector<int, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&) /root/HiGHS/src/mip/HighsImplications.cpp:491
+    #8 0x7f4c1a70341b in presolve::HPresolve::shrinkProblem(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:915
+    #9 0x7f4c1a7d45fe in presolve::HPresolve::run(presolve::HighsPostsolveStack&) /root/HiGHS/src/presolve/HPresolve.cpp:4437
+    #10 0x7f4c1a2178b8 in HighsMipSolverData::runPresolve(int) /root/HiGHS/src/mip/HighsMipSolverData.cpp:664
+    #11 0x7f4c1a1c3b7c in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:129
+    #12 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #13 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #14 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #15 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #16 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #17 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+Objective function is integral with scale 1
+
+Solving MIP model with:
+   8 rows
+   520 cols (472 binary, 47 integer, 1 implied int., 0 continuous)
+   3223 nonzeros
+
+Src: B => Branching; C => Central rounding; F => Feasibility pump; H => Heuristic; L => Sub-MIP;
+     P => Empty MIP; R => Randomized rounding; S => Solve LP; T => Evaluate node; U => Unbounded;
+     z => Trivial zero; l => Trivial lower; u => Trivial upper; p => Trivial point
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work      
+Src  Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+ z       0       0         0   0.00%   inf             -0                 Large        0     -8      0         0     0.3s
+         0       0         0   0.00%   370             -0                 Large        0      0      2        15     0.3s
+/root/HiGHS/src/util/HighsHashTree.h:1295:73: runtime error: index 1 out of bounds for type 'NodePtr [1]'
+    #0 0x7f4c1a0c5bc6 in for_each_recurse<void, HighsImplications::cleanupVarbounds(HighsInt)::<lambda(HighsInt, HighsImplications::VarBound&)>&> /root/HiGHS/src/util/HighsHashTree.h:1295
+    #1 0x7f4c1a0d5543 in for_each<HighsImplications::cleanupVarbounds(HighsInt)::<lambda(HighsInt, HighsImplications::VarBound&)> > /root/HiGHS/src/util/HighsHashTree.h:1420
+    #2 0x7f4c1a0d5543 in HighsImplications::cleanupVarbounds(int) /root/HiGHS/src/mip/HighsImplications.cpp:743
+    #3 0x7f4c1a540f25 in HighsTransformedLp::HighsTransformedLp(HighsLpRelaxation const&, HighsImplications&) /root/HiGHS/src/mip/HighsTransformedLp.cpp:66
+    #4 0x7f4c1a4d65e3 in HighsSeparation::separationRound(HighsDomain&, HighsLpRelaxation::Status&) /root/HiGHS/src/mip/HighsSeparation.cpp:104
+    #5 0x7f4c1a246f69 in HighsMipSolverData::rootSeparationRound(HighsSeparation&, int&, HighsLpRelaxation::Status&) /root/HiGHS/src/mip/HighsMipSolverData.cpp:1710
+    #6 0x7f4c1a256fc4 in HighsMipSolverData::evaluateRootNode() /root/HiGHS/src/mip/HighsMipSolverData.cpp:2042
+    #7 0x7f4c1a1c745f in HighsMipSolver::run() /root/HiGHS/src/mip/HighsMipSolver.cpp:188
+    #8 0x7f4c19a48d6e in Highs::callSolveMip() /root/HiGHS/src/lp_data/Highs.cpp:3967
+    #9 0x7f4c199fd1fa in Highs::solve() /root/HiGHS/src/lp_data/Highs.cpp:1144
+    #10 0x564475d6a0ca in main /root/HiGHS/app/RunHighs.cpp:85
+    #11 0x7f4c17833d67 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #12 0x7f4c17833e24 in __libc_start_main_impl ../csu/libc-start.c:360
+    #13 0x564475d6dc90 in _start (/root/highslib/bin/highs+0x193c90) (BuildId: 5536d1d77cb29fc6280288ab474eab6065a5c44b)
+
+ C       0       0         0   0.00%   370             370                0.00%       15      5      2        25     0.3s
+         1       0         1 100.00%   370             370                0.00%       15      5      2        25     0.3s
+
+Solving report
+  Model             matchit_1
+  Status            Optimal
+  Primal bound      370
+  Dual bound        370
+  Gap               0% (tolerance: 0.01%)
+  P-D integral      0
+  Solution status   feasible
+                    370 (objective)
+                    0 (bound viol.)
+                    0 (int. viol.)
+                    0 (row viol.)
+  Timing            0.30 (total)
+                    0.00 (presolve)
+                    0.00 (solve)
+                    0.00 (postsolve)
+  Max sub-MIP depth 0
+  Nodes             1
+  Repair LPs        0 (0 feasible; 0 iterations)
+  LP iterations     25 (total)
+                    0 (strong br.)
+                    10 (separation)
+                    0 (heuristics)

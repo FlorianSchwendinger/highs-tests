@@ -4,7 +4,7 @@ tasks:
   podman_build:
     desc: Build the Docker image with Podman
     cmds:
-      - podman build --tag highs-san -f ./Dockerfile
+      - podman build --no-cache --tag highs-san -f ./Dockerfile
 
   podman_run:
     desc: Run the Docker image with Podman
